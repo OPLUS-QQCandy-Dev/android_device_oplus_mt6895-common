@@ -171,6 +171,10 @@ $(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class
 $(call soong_config_set,lineage_health,charging_control_charging_enabled,0)
 $(call soong_config_set,lineage_health,charging_control_charging_disabled,1)
 
+# USB
+# We ship the stock OPLUS USB gadget rc (init.mt6895.usb.rc).
+$(call soong_config_set_bool,mediatek_gadget,use_custom_usb_gadget_rc,true)
+
 # IMS
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-com.mediatek.ims.xml \
