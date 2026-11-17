@@ -29,9 +29,10 @@ TARGET_USES_UEFI := true
 TARGET_NO_BOOTLOADER := true
 
 # HIDL
+# Blob-only build: the MTK/OPLUS framework matrix fragments reference HALs
+# whose interface definitions are not built here. Keep only the FCM 6 level
+# so checkvintf has no HAL entries to validate.
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-    hardware/mediatek/vintf/mediatek_framework_compatibility_matrix.xml \
-    hardware/oplus/vintf/device_framework_matrix.xml \
     $(COMMON_PATH)/vintf/compatibility_matrix.level6.xml
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE += $(COMMON_PATH)/compatibility_matrix.xml
