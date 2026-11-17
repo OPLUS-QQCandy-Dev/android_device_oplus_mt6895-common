@@ -55,7 +55,9 @@ PRODUCT_PACKAGES += \
     tri-state-key-calibrate
 
 # API
-BOARD_SHIPPING_API_LEVEL := 31
+# Keep the board (vendor GRF) level in sync with the product level so the
+# OTA VINTF check selects a framework matrix that is actually shipped.
+BOARD_SHIPPING_API_LEVEL := 33
 PRODUCT_SHIPPING_API_LEVEL := 33
 
 # Audio
