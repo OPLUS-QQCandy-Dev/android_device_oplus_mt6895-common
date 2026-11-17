@@ -96,6 +96,10 @@ BOARD_VENDOR_KERNEL_MODULES += \
     $(BOARD_KERNEL_MODULE_DIR)/wlan_drv_gen4m_6895.ko \
     $(BOARD_KERNEL_MODULE_DIR)/wmt_chrdev_wifi_connac2.ko
 
+# vendor_dlkm.modules.load lists a couple of modules twice; dedupe the
+# install list so image packaging does not hardlink the same file twice.
+BOARD_VENDOR_KERNEL_MODULES := $(sort $(BOARD_VENDOR_KERNEL_MODULES))
+
 # Partitions
 AB_OTA_PARTITIONS += \
     boot \
