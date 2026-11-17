@@ -303,8 +303,7 @@ PRODUCT_PACKAGES += \
     sensors.oplus
 
 PRODUCT_PACKAGES += \
-    libshim_sensors \
-    libshim_sink
+    libshim_sensors
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
