@@ -60,6 +60,10 @@ PRODUCT_PACKAGES += \
 BOARD_SHIPPING_API_LEVEL := 33
 PRODUCT_SHIPPING_API_LEVEL := 33
 
+# 5.10 has no kernel entry in the FCM 6 framework matrix shipped by
+# Android 17; skip the OTA kernel-requirements check (documented workaround).
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
