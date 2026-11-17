@@ -6,6 +6,9 @@
 
 BUILD_BROKEN_DUP_RULES := true
 
+# OPLUS ships ELF helpers under /odm/etc/bin via PRODUCT_COPY_FILES.
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
 COMMON_PATH := device/oplus/mt6895-common
 KERNEL_PATH := device/oplus/mt6895-kernel
 
