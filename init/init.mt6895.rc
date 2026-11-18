@@ -98,6 +98,9 @@ on late-fs
     write /sys/kernel/tracing/trace_marker "E"
     write /proc/bootprof "INIT:Mount_END --late"
 
+    # Trustonic daemon must be up before early_hal (keymint/keystore2)
+    start mobicore
+
 on post-fs
     write /proc/bootprof "INIT:post-fs"
 
